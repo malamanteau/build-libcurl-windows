@@ -118,7 +118,7 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 
 REM Download latest curl and rename to curl.zip
 echo Downloading latest curl...
-%WGET% "http://curl.haxx.se%url%" -O curl.zip
+%WGET% "http://curl.haxx.se%url%" -O curl.zip --no-check-certificate
 
 REM Extract downloaded zip file to tmp_libcurl
 %SEVEN_ZIP% x curl.zip -y -otmp_libcurl | FIND /V "ing  " | FIND /V "Igor Pavlov"
